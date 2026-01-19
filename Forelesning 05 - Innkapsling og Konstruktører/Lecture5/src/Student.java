@@ -36,7 +36,8 @@ public class Student {
                    int age, String studentId) {
         this.firstName = firstName;
         this.lastName = lastName;
-        setAge(age);
+        //this.age = age;
+        setAge(age); // For å forsikre standardisert håndtering kan vi gjenbruke set-metoder.
         this.studentId = studentId;
     }
 
