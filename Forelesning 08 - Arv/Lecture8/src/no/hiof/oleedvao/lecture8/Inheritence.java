@@ -74,6 +74,7 @@ public class Inheritence {
 
 
         /*
+        (Se også forelesning 9 slides)
         Vi ser her bruk av toString()-metode for de forskjellige objektene. Legg merke ved at vi ikke trenger å kalle
         metoden, men at Java automatisk antar at vi ønsker å benytte toString når vi skriver ut et objekt.
         Dette ...

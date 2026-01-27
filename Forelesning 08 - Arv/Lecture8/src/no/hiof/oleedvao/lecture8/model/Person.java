@@ -4,7 +4,7 @@ package no.hiof.oleedvao.lecture8.model;
 Klassen Person er hovedsakelig definert likt som vi har gjort i tidligere forelesninger, med private instansvariabler,
 gettere og settere og en konstruktør.
 
-Merk også at alle klasser underforstått arver fra en predifinert klasse kalt Object.
+(Se også forelesning 9 slides) Merk også at alle klasser underforstått arver fra en predifinert klasse kalt Object.
 Altså er klassedefinisjonen under i praksis det samme som
     public class Person extends Object {...}
 Dette medfører at alle klasser arver en del egenskaper, slik som blant annet toString()-metoden.
@@ -21,6 +21,7 @@ public class Person {
     }
 
    /*
+  (Se også forelesning 9 slides)
    Overriding er å omdefinere en arvet metode slik at den kan tilpasses den aktuelle klassen.
    Dette kan vi gjøre ved å definere den arvede metoden på nytt med samme datatype og navn. Vi kan også benytte
    @Override for å kontrollere at metoden overrides på riktig måte.
