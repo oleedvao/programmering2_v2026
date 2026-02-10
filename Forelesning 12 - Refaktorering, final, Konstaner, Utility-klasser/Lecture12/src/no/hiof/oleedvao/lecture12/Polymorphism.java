@@ -34,25 +34,61 @@ public class Polymorphism {
         listOfPersons.add(new BusDriver("Buzz", "Driver", 40,
                 "630 - Moss, Halden"));
 
+
+        /*
+        Under er en refaktorert implementasjon av koden vi skrev i forrige forelesning. Altså en erstatning for
+        if-tester med instance of sjekker. Refaktorering sikter mot å forbedre kode uten å endre selve funksjonaliteten.
+        Dette kan være relevant for f.eks. lesbarhet, antall kodelinjer og hastighet.
+
+        Switch-statements er ofte ansett som foretrukket overfor if-tester, i alle fall i tilfeller hvor vi bare
+        sjekker "innholdet" av én variabel. Dette er fordi vi unngår redundante sjekker, slik som instance of i hver
+        if-test, og vi slipper kodeblokker med {} så lenge et gitt case bare kjører én kodelinje.
+        Mange anser også switch-statements som generelt mer lesbare.
+         */
         for (Person currentPerson : listOfPersons) {
-            if (currentPerson instanceof BusDriver) {
-                BusDriver busDriver = (BusDriver) currentPerson;
-                System.out.println(busDriver.getFirstName() + " is a bus driver with route " +
-                        busDriver.getRoute());
+            switch (currentPerson) {
+                case BusDriver currentBusDriver ->
+                        System.out.println(currentBusDriver.getFirstName() + " is a bus driver with route " +
+                                currentBusDriver.getRoute());
+                case CarpenterApprentice currentApprentice ->
+                        System.out.println(currentApprentice.getFirstName() + " is a carpenter apprentice with training" +
+                                "period that starts " + currentApprentice.getTrainingStartDate());
+                case Carpenter currentCarpenter ->
+                        System.out.println(currentCarpenter.getFirstName() + " is a carpenter and has built " +
+                                currentCarpenter.getNumHousesBuilt() + " houses!");
+                default ->
+                        System.out.println(currentPerson.getFirstName() + " is a person!");
             }
-            else if (currentPerson instanceof CarpenterApprentice) {
-                System.out.println(currentPerson.getFirstName() + " is a carpenter apprentice with training" +
-                                "period that starts " + ((CarpenterApprentice) currentPerson).getTrainingStartDate()
-                        );
+        }
+
+        /*
+        Koden under er også litt refaktorert ved å benytte pattern variables, som unngår Object Type Casting:
+
+            if (currentPerson instanceof BusDriver currentBusDriver) {...}
+
+        I stedet for:
+
+            if (currentPerson instanceof BusDriver) {...}
+        */
+        /*
+        for (Person currentPerson : listOfPersons) {
+            if (currentPerson instanceof BusDriver currentBusDriver) {
+                System.out.println(currentBusDriver.getFirstName() + " is a bus driver with route " +
+                        currentBusDriver.getRoute());
             }
-            else if (currentPerson instanceof Carpenter) {
-                System.out.println(currentPerson.getFirstName() + " is a carpenter and has built " +
-                        ((Carpenter) currentPerson).getNumHousesBuilt() + " houses!");
+            else if (currentPerson instanceof CarpenterApprentice currentApprentice) {
+                System.out.println(currentApprentice.getFirstName() + " is a carpenter apprentice with training" +
+                                "period that starts " + currentApprentice.getTrainingStartDate());
+            }
+            else if (currentPerson instanceof Carpenter currentCarpenter) {
+                System.out.println(currentCarpenter.getFirstName() + " is a carpenter and has built " +
+                        currentCarpenter.getNumHousesBuilt() + " houses!");
             }
             else {
                 System.out.println(currentPerson.getFirstName() + " is a person!");
             }
         }
+         */
 
     }
 }
