@@ -8,7 +8,7 @@ public class HoneyBadger extends Animal {
 
     public HoneyBadger(String name, LocalDate birthDate) {
         super(name, birthDate);
-        this.setSpecies("Honey Badger");
+        this.setSpecies("Honey Badger"); // Vi lar klassen definere species på en standardisert måte.
     }
 
     public int getNumSnakesEaten() {

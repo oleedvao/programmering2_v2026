@@ -2,13 +2,16 @@ package no.hiof.oleedvao.zooregister.model;
 
 import java.time.LocalDate;
 
+/*
+En klasse som representerer chimpanser.
+ */
 public class Chimp extends Animal {
 
     private int iq;
 
     public Chimp(String name, LocalDate birthDate, int iq) {
         super(name, birthDate);
-        this.setSpecies("Chimp");
+        this.setSpecies("Chimp"); // Vi lar klassen definere species på en standardisert måte.
 
         this.iq = iq;
     }

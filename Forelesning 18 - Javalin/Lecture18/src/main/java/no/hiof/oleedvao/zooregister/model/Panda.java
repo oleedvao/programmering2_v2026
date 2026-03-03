@@ -8,7 +8,7 @@ public class Panda extends Animal {
 
     public Panda(String name, LocalDate birthDate, String kungFuBelt) {
         super(name, birthDate);
-        this.setSpecies("Panda");
+        this.setSpecies("Panda"); // Vi lar klassen definere species på en standardisert måte.
 
         this.kungFuBelt = kungFuBelt;
     }
