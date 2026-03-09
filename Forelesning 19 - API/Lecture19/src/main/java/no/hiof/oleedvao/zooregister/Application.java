@@ -23,7 +23,7 @@ public class Application {
                 context.result("Hello from the other page!");
             }
         });
-        
+
         app.get("/some-page/page-in-page", new Handler() {
             @Override
             public void handle(@NotNull Context context) throws Exception {
