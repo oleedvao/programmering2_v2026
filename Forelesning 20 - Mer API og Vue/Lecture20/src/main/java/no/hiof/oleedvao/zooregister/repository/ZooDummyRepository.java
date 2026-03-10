@@ -44,16 +44,26 @@ public class ZooDummyRepository implements ZooRepository {
     }
 
     /*
-    Returnerer en hardkoded maskot i form at et Animal-objekt.
+    Logikk for å hente én dyrepark basert på navn fra den hardkodede listen med dyreparker.
+    Returnerer det aktuelle Zoo-objektet hvis det finnes, hvis ikke returneres null.
      */
+    @Override
+    public Zoo getZooByName(String zooName) {
+        for (Zoo currentZoo : zoos) {
+            if (currentZoo.getName().equalsIgnoreCase(zooName)) {
+                return currentZoo;
+            }
+        }
+        return null;
+    }
+
+
     @Override
     public Animal getMascot() {
         return mascot;
     }
 
-    /*
-    Returnerer listen med alle de hardkodede dyreparkene.
-     */
+
     @Override
     public ArrayList<Zoo> getAllZoos() {
         return new ArrayList<>(zoos);
