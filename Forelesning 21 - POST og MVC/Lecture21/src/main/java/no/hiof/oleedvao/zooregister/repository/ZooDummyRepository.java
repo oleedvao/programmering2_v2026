@@ -35,6 +35,14 @@ public class ZooDummyRepository implements ZooRepository {
         mascot = julius;
     }
 
+    /*
+    Ny metode for å legge til en ny Zoo.
+     */
+    @Override
+    public void addZoo(Zoo newZoo) {
+        zoos.add(newZoo);
+    }
+
     @Override
     public Zoo getZooByName(String zooName) {
         for (Zoo currentZoo : zoos) {
