@@ -119,7 +119,7 @@ public class Application {
         /*
         Endepunkt for frontend-side for opprettelse av en ny Zoo via html-form.
          */
-        app.get("/add-zoo", new VueComponent("add-zoo"));
+        //app.get("/add-zoo", new VueComponent("add-zoo"));
         app.get("/add-zoo", new VueComponent("add-zoo-v2"));
 
 
